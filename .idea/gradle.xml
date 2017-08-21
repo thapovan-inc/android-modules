@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common-utils" />
             <option value="$PROJECT_DIR$/custom-ui" />
+            <option value="$PROJECT_DIR$/social-network" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

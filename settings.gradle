@@ -1,1 +1,1 @@
-include ':app', ':common-utils', ':custom-ui'
+include ':app', ':common-utils', ':custom-ui', ':social-network'
