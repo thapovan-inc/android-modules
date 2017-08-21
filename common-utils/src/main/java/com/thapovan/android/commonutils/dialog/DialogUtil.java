@@ -2,6 +2,7 @@ package com.thapovan.android.commonutils.dialog;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.widget.Button;
@@ -227,7 +228,11 @@ public class DialogUtil {
                                                  String message,
                                                  DialogInterface.OnClickListener listener) {
 
-        if(activity.isDestroyed()) return;
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2){
+            if(activity.isDestroyed()) {
+                return;
+            }
+        }
 
         new AlertDialog.Builder(activity, R.style.MyDialogStyle)
                 .setTitle(title)
