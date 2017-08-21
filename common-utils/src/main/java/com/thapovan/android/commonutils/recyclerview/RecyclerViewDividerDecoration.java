@@ -1,4 +1,4 @@
-package com.thapovan.android.customui.recyclerview;
+package com.thapovan.android.commonutils.recyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

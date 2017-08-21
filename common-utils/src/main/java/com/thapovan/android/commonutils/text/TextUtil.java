@@ -2,6 +2,8 @@ package com.thapovan.android.commonutils.text;
 
 import android.widget.EditText;
 
+import java.util.List;
+
 public class TextUtil {
 
 	private TextUtil() { }
@@ -51,4 +53,7 @@ public class TextUtil {
 		return original.substring(0, 1).toUpperCase() + original.substring(1).toLowerCase();
 	}
 
+	public static boolean isListNotEmpty(List list){
+		return list != null && !list.isEmpty();
+	}
 }
