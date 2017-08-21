@@ -19,7 +19,8 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        compile 'com.github.thapovan-inc:android-modules:v1.0.0'
+	        compile 'com.github.thapovan-inc.android-modules:common-utils:v1.0.0'
+            compile 'com.github.thapovan-inc.android-modules:custom-ui:v1.0.0'
 	}
   
 ## How do I use?
