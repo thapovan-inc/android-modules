@@ -3,7 +3,7 @@ Android Modules contains simple and common utils class. It contains more common 
 
 ## Prerequisites
 ```
-minSdkVersion 17
+minSdkVersion 15
 ```
 ## Installation
 
