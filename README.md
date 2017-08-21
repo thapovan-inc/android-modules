@@ -1,5 +1,5 @@
 [![](https://jitpack.io/v/thapovan-inc/android-modules.svg)](https://jitpack.io/#thapovan-inc/android-modules)
-T
+
 # Android Modules
 Android Modules contains simple and common utils class. It contains more common utils like text, toast, alert dialog etc,.
 
