@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Common Utils</string>
+    <!--dialog-->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_save">Save</string>
+    <string name="dialog_discard">Discard</string>
+    <string name="dialog_are_you_sure_cancel">Are you sure you wish to cancel?</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- theme style -->
+    <color name="colorPrimary">#1D95E1</color>
+    <color name="colorPrimaryDark">#1a83c6</color>
+    <color name="colorAccent">#1fa0f2</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <!-- theme style -->
+
+    <!-- general -->
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+    <color name="orange" >#e55607</color>
+    <color name="btnDarkBlue">#061C2A</color>
+    <color name="blue">#1D95E1</color>
+</resources>
+
