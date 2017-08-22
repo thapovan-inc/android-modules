@@ -73,6 +73,7 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
     @OnClick(R.id.buttonFBLogout)
     public void onButtonFBLogout() {
         FacebookLogin.getInstance().onLogoutClicked();
+        refreshUI();
     }
 
     @Override
