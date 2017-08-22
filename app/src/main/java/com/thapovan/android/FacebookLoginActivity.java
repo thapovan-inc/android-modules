@@ -8,6 +8,7 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.thapovan.android.commonutils.toast.ToastUtil;
 import com.thapovan.android.socialnetwork.facebook.FacebookLogin;
+import com.thapovan.android.socialnetwork.facebook.model.FacebookProfile;
 import com.thapovan.android.socialnetwork.facebook.subscriber.FacebookEventSubscriber;
 
 import butterknife.ButterKnife;
@@ -31,13 +32,14 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
 
     @OnClick(R.id.buttonFBLogin)
     public void onButtonFBLogin() {
-        ToastUtil.showToast(this,"fkjghj");
         FacebookLogin.getInstance().onFBClicked(this);
+//        FacebookLogin.getInstance().getUserProfile();
     }
 
     @Override
     public void onFacebookLoginSuccess(LoginResult loginResult) {
         ToastUtil.showToast(this,"loginResult "+loginResult.getAccessToken().getToken() );
+                FacebookLogin.getInstance().getUserProfile(this);
     }
 
     @Override
@@ -48,5 +50,10 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
     @Override
     public void onFacebookLoginError(FacebookException error) {
         ToastUtil.showToast(this,"onFacebookLoginError ");
+    }
+
+    @Override
+    public void onFacebookProfileGen(FacebookProfile profile) {
+        ToastUtil.showToast(this,"profile "+profile.getName());
     }
 }
