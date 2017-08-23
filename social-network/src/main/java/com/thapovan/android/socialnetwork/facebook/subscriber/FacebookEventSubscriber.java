@@ -8,5 +8,5 @@ public interface FacebookEventSubscriber {
     public void onFacebookLoginSuccess(LoginResult loginResult);
     public void onFacebookLoginCancel();
     public void onFacebookLoginError(FacebookException error);
-    public void onFacebookProfileGen(FacebookProfile profile);
+    public void onFacebookProfileGet(FacebookProfile profile);
 }

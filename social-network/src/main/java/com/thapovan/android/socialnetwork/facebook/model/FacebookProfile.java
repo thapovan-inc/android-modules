@@ -1,15 +1,9 @@
 package com.thapovan.android.socialnetwork.facebook.model;
 
-/**
- * Created by karthick_vetrivel on 22/08/17.
- */
-
 public class FacebookProfile {
 
     private String name;
-
     private String email;
-
     private String imageUrl;
 
     public FacebookProfile(String name, String email, String imageUrl) {
