@@ -4,4 +4,10 @@
     <string name="facebook_app_id">113780272657069</string>
     <string name="fb_login_protocol_scheme">fb113780272657069</string>
 
+
+    <string name="label_welcome_guest">Welcome Guest.!!</string>
+
+    <!--facebook -->
+    <string name="msg_fetching_facebook_profile">Fetching Facebook Profile.!!</string>
+
 </resources>

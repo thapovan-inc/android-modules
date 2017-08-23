@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
+import com.thapovan.android.commonutils.toast.ToastUtil;
 import com.thapovan.android.socialnetwork.facebook.FacebookLogin;
 import com.thapovan.android.socialnetwork.facebook.model.FacebookProfile;
 import com.thapovan.android.socialnetwork.facebook.subscriber.FacebookEventSubscriber;
@@ -44,7 +45,9 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
         if(FacebookLogin.getInstance().isUserSignedIn()){
             buttonFBLogin.setVisibility(View.GONE);
             buttonFBLogout.setVisibility(View.VISIBLE);
-            FacebookLogin.getInstance().getUserProfile(mActivity);
+            if(profile == null){
+                FacebookLogin.getInstance().getUserProfile(mActivity);
+            }
         }else {
             buttonFBLogin.setVisibility(View.VISIBLE);
             buttonFBLogout.setVisibility(View.GONE);
@@ -54,7 +57,7 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
             textName.setText(profile.getName());
             textEmail.setText(profile.getEmail());
         }else {
-            textName.setText("");
+            textName.setText(getString(R.string.label_welcome_guest));
             textEmail.setText("");
         }
     }
@@ -73,11 +76,13 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
     @OnClick(R.id.buttonFBLogout)
     public void onButtonFBLogout() {
         FacebookLogin.getInstance().onLogoutClicked();
+        profile = null;
         refreshUI();
     }
 
     @Override
     public void onFacebookLoginSuccess(LoginResult loginResult) {
+        ToastUtil.showToast(mActivity, getString(R.string.msg_fetching_facebook_profile));
         FacebookLogin.getInstance().getUserProfile(mActivity);
     }
 
