@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.thapovan.android.commonutils.toast.ToastUtil;
+import com.thapovan.android.imageutils.ImageUtil;
 import com.thapovan.android.socialnetwork.facebook.FacebookLogin;
 import com.thapovan.android.socialnetwork.facebook.model.FacebookProfile;
 import com.thapovan.android.socialnetwork.facebook.subscriber.FacebookEventSubscriber;
@@ -56,6 +57,7 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
         if(profile != null){
             textName.setText(profile.getName());
             textEmail.setText(profile.getEmail());
+            ImageUtil.loadImage(mActivity, profile.getImageUrl(), imageProfile, R.drawable.loading);
         }else {
             textName.setText(getString(R.string.label_welcome_guest));
             textEmail.setText("");
