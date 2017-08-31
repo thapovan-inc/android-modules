@@ -1,13 +1,19 @@
 package com.thapovan.android.commonutils.dialog;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
+import android.view.ContextThemeWrapper;
+import android.view.View;
 import android.widget.Button;
 
 import com.thapovan.android.commonutils.R;
+import com.thapovan.android.commonutils.log.L;
 
 public class DialogUtil {
     /**
@@ -241,5 +247,50 @@ public class DialogUtil {
                 .setCancelable(false)
                 .show();
     }
+
+    public static ProgressDialog showProgressDialog(Context context, String message) {
+
+        if(context == null){
+            return null;
+        }
+
+        ProgressDialog dialog;
+        dialog = new ProgressDialog(new ContextThemeWrapper(context, android.R.style.Theme_Holo_Light_DarkActionBar));
+        dialog.setMessage(""+message);
+        dialog.setCancelable(false);
+        dialog.show();
+        return dialog;
+    }
+
+//    public static class CustomProgressDialog extends ProgressDialog {
+//        public CustomProgressDialog(Context context) {
+//            super(context);
+//        }
+//
+//        @Override
+//        public void onCreate(Bundle savedInstanceState) {
+//            super.onCreate(savedInstanceState);
+//            View view = this.findViewById(android.R.id.message);
+//            View title = this.findViewById(android.R.id.title);
+//            if (view != null) {
+//                // Shouldn't be null. Just to be paranoid enough.
+//                AppUtil.setTextViewFont(view);
+//            }
+//            if(title!=null){
+//                AppUtil.setTextViewFont(title);
+//            }
+//        }
+//    }
+
+    public static void hideProgressDialog(ProgressDialog dialog) {
+        try {
+            if (dialog != null && dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }catch (Exception e){
+            L.e(e);
+        }
+    }
+
 
 }
