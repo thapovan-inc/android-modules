@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FacebookLoginActivity extends AppCompatActivity implements FacebookEventSubscriber {
+public class FacebookLoginActivity extends AppActivity implements FacebookEventSubscriber {
 
     @BindView(R.id.buttonFBLogin)           Button buttonFBLogin;
     @BindView(R.id.buttonFBLogout)          Button buttonFBLogout;
@@ -85,6 +85,7 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
     @Override
     public void onFacebookLoginSuccess(LoginResult loginResult) {
         ToastUtil.showToast(mActivity, getString(R.string.msg_fetching_facebook_profile));
+        showProgress();
         FacebookLogin.getInstance().getUserProfile(mActivity);
     }
 
@@ -101,6 +102,7 @@ public class FacebookLoginActivity extends AppCompatActivity implements Facebook
     @Override
     public void onFacebookProfileGet(FacebookProfile profile) {
         this.profile = profile;
+        hideProgress();
         refreshUI();
     }
 }

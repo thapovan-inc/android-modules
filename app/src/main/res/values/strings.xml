@@ -5,6 +5,7 @@
     <string name="fb_login_protocol_scheme">fb113780272657069</string>
 
 
+    <string name="label_loading">Loading...</string>
     <string name="label_welcome_guest">Welcome Guest.!!</string>
 
     <!--facebook -->
