@@ -10,5 +10,6 @@
 
     <!--facebook -->
     <string name="msg_fetching_facebook_profile">Fetching Facebook Profile.!!</string>
+    <string name="title_activity_home">ActivityHome</string>
 
 </resources>

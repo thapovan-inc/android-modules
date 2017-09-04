@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "922783896122",
+    "firebase_url": "https://thapovan-android-modules.firebaseio.com",
+    "project_id": "thapovan-android-modules",
+    "storage_bucket": "thapovan-android-modules.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922783896122:android:020172143e8dc4a8",
+        "android_client_info": {
+          "package_name": "com.thapovan.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922783896122-bvfh061d57mobn5ticdjsf2luuvgv0ql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-kdZnFExzpAzR2gdiTLcrz4iwypKK8to"
+        },
+        {
+          "current_key": "AIzaSyDBweMVYmbiakxe5eJjvnbTWc_l5FeFwok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

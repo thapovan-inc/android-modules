@@ -1,10 +1,12 @@
-package com.thapovan.android;
+package com.thapovan.android.app;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
+
+import com.thapovan.android.R;
 import com.thapovan.android.commonutils.dialog.DialogUtil;
 
 public class AppActivity extends AppCompatActivity {

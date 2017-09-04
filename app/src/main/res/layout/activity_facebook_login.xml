@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.thapovan.android.FacebookLoginActivity">
+    tools:context="com.thapovan.android.facebook.FacebookLoginActivity">
     <LinearLayout
         android:layout_margin="20dp"
         android:layout_width="match_parent"

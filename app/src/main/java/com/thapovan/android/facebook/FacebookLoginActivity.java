@@ -1,7 +1,7 @@
-package com.thapovan.android;
+package com.thapovan.android.facebook;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +10,10 @@ import android.widget.TextView;
 
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
+import com.thapovan.android.R;
+import com.thapovan.android.app.AppActivity;
 import com.thapovan.android.commonutils.toast.ToastUtil;
+import com.thapovan.android.home.ActivityHome;
 import com.thapovan.android.imageutils.ImageUtil;
 import com.thapovan.android.socialnetwork.facebook.FacebookLogin;
 import com.thapovan.android.socialnetwork.facebook.model.FacebookProfile;
@@ -31,12 +34,16 @@ public class FacebookLoginActivity extends AppActivity implements FacebookEventS
     FacebookProfile profile = null;
     FacebookLoginActivity mActivity;
 
+    public static void start(final Activity activity) {
+        final Intent intent = new Intent(activity, FacebookLoginActivity.class);
+        activity.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mActivity = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_login);
-        ButterKnife.bind(this);
+        ButterKnife.bind(mActivity);
         FacebookLogin.getInstance().initFacebookLogin(mActivity);
 
         refreshUI();
