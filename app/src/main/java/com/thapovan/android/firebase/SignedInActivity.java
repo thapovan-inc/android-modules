@@ -42,8 +42,8 @@ import butterknife.OnClick;
 
 public class SignedInActivity extends AppCompatActivity {
 
-    private static final String EXTRA_IDP_RESPONSE = "extra_idp_response";
-    private static final String EXTRA_SIGNED_IN_CONFIG = "extra_signed_in_config";
+    private static final String EXTRA_IDP_RESPONSE = "my_extra_idp_response";
+    private static final String EXTRA_SIGNED_IN_CONFIG = "my_extra_signed_in_config";
 
     @BindView(android.R.id.content)
     View mRootView;

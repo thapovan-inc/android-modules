@@ -44,7 +44,7 @@ public class FirebaseActivity extends AppActivity {
 
     FirebaseActivity mActivity;
 
-    private static final int RC_SIGN_IN = 100;
+    private static final int RC_SIGN_IN = 101;
     private static final String UNCHANGED_CONFIG_VALUE = "CHANGE-ME";
     private static final String FIREBASE_TOS_URL = "https://firebase.google.com/terms/";
     private static final String FIREBASE_PRIVACY_POLICY_URL = "https://firebase.google.com/terms/analytics/#7_privacy";
@@ -234,6 +234,9 @@ public class FirebaseActivity extends AppActivity {
     @MainThread
     private List<String> getFacebookPermissions() {
         List<String> result = new ArrayList<>();
+//        if (true) {
+//            result.add("public_profile");
+//        }
         if (true) {
             result.add("user_friends");
         }
