@@ -30,7 +30,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.thapovan.android.R;
 import com.thapovan.android.commonutils.log.L;
-import com.thapovan.android.imageutils.ImageUtil;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -40,7 +39,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SignedInActivity extends AppCompatActivity {
+public class UserProfileActivity extends AppCompatActivity {
 
     private static final String EXTRA_IDP_RESPONSE = "my_extra_idp_response";
     private static final String EXTRA_SIGNED_IN_CONFIG = "my_extra_signed_in_config";
@@ -71,21 +70,17 @@ public class SignedInActivity extends AppCompatActivity {
             Context context,
             IdpResponse idpResponse,
             SignedInConfig signedInConfig) {
-        L.i("ONNN 9");
         Intent startIntent = new Intent();
         if (idpResponse != null) {
-            L.i("ONNN 10");
             startIntent.putExtra(EXTRA_IDP_RESPONSE, idpResponse);
         }
-        L.i("ONNN 11");
-        return startIntent.setClass(context, SignedInActivity.class)
+        return startIntent.setClass(context, UserProfileActivity.class)
                 .putExtra(EXTRA_SIGNED_IN_CONFIG, signedInConfig);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        L.i("ONNN 13");
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) {
             FirebaseActivity.start(this);
@@ -96,11 +91,9 @@ public class SignedInActivity extends AppCompatActivity {
         mIdpResponse = getIntent().getParcelableExtra(EXTRA_IDP_RESPONSE);
         mSignedInConfig = getIntent().getParcelableExtra(EXTRA_SIGNED_IN_CONFIG);
 
-        setContentView(R.layout.signed_in_layout);
+        setContentView(R.layout.activity_user_profile);
         ButterKnife.bind(this);
-        L.i("ONNN 14");
         populateProfile();
-        L.i("ONNN 15");
         populateIdpToken();
     }
 
@@ -112,7 +105,7 @@ public class SignedInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            FirebaseActivity.start(SignedInActivity.this);
+                            FirebaseActivity.start(UserProfileActivity.this);
                             finish();
                         } else {
                             showSnackbar(R.string.sign_out_failed);
@@ -142,7 +135,7 @@ public class SignedInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            FirebaseActivity.start(SignedInActivity.this);
+                            FirebaseActivity.start(UserProfileActivity.this);
                             finish();
                         } else {
                             showSnackbar(R.string.delete_account_failed);

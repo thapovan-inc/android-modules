@@ -22,6 +22,8 @@
     <string name="delete_account_failed">Delete account failed</string>
     <!--facebook -->
     <string name="msg_fetching_facebook_profile">Fetching Facebook Profile.!!</string>
-    <string name="title_activity_home">ActivityHome</string>
+
+    <!--screen titles-->
+    <string name="title_activity_home">Home</string>
 
 </resources>

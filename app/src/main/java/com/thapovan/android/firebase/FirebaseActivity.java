@@ -9,12 +9,7 @@ import android.support.annotation.StringRes;
 import android.support.annotation.StyleRes;
 import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.facebook.FacebookException;
-import com.facebook.login.LoginResult;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
@@ -23,11 +18,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.thapovan.android.R;
 import com.thapovan.android.app.AppActivity;
 import com.thapovan.android.commonutils.log.L;
-import com.thapovan.android.commonutils.toast.ToastUtil;
-import com.thapovan.android.imageutils.ImageUtil;
-import com.thapovan.android.socialnetwork.facebook.FacebookLogin;
-import com.thapovan.android.socialnetwork.facebook.model.FacebookProfile;
-import com.thapovan.android.socialnetwork.facebook.subscriber.FacebookEventSubscriber;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,12 +60,10 @@ public class FirebaseActivity extends AppActivity {
 
     @OnClick(R.id.btnLogin)
     public void onBtnLogin() {
-        L.i("ONNN $$$$");
         initFireBaseLogin();
     }
 
     private void initFireBaseLogin() {
-        L.i("ONNN ####");
         startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder()
                         .setTheme(getSelectedTheme())
@@ -92,14 +80,10 @@ public class FirebaseActivity extends AppActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        L.i("ONNN 1");
         if (requestCode == RC_SIGN_IN) {
-            L.i("ONNN 2");
             handleSignInResponse(resultCode, data);
-            L.i("ONNN 3");
             return;
         }
-        L.i("ONNN 4");
         showSnackbar(R.string.unknown_response);
     }
 
@@ -109,12 +93,10 @@ public class FirebaseActivity extends AppActivity {
 
         // Successfully signed in
         if (resultCode == RESULT_OK) {
-            L.i("ONNN 5");
             startSignedInActivity(response);
             finish();
             return;
         } else {
-            L.i("ONNN 6");
             // Sign in failed
             if (response == null) {
                 // User pressed back button
@@ -132,18 +114,16 @@ public class FirebaseActivity extends AppActivity {
                 return;
             }
         }
-        L.i("ONNN 7");
         showSnackbar(R.string.unknown_sign_in_response);
     }
 
 
     private void startSignedInActivity(IdpResponse response) {
-        L.i("ONNN 8");
         startActivity(
-                SignedInActivity.createIntent(
+                UserProfileActivity.createIntent(
                         this,
                         response,
-                        new SignedInActivity.SignedInConfig(
+                        new UserProfileActivity.SignedInConfig(
                                 getSelectedLogo(),
                                 getSelectedTheme(),
                                 getSelectedProviders(),
