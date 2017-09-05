@@ -23,7 +23,6 @@ public class AppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
-
     public void showProgress(){
         showProgress(R.string.label_loading);
     }
@@ -32,7 +31,7 @@ public class AppActivity extends AppCompatActivity {
         showProgress(getString(resId));
     }
 
-    public void showProgress(String message){
+    public void showProgress(String message) {
         if(mProgress!=null){
             mProgress.setMessage(message);
             return;
@@ -40,7 +39,7 @@ public class AppActivity extends AppCompatActivity {
         mProgress = DialogUtil.showProgressDialog(this,message);
     }
 
-    public void hideProgress(){
+    public void hideProgress() {
         DialogUtil.hideProgressDialog(mProgress);
         mProgress=null;
     }
