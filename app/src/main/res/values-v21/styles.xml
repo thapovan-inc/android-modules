@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="GreenTheme">
+        <item name="colorPrimary">@color/material_green_500</item>
+        <item name="android:colorPrimaryDark">@color/material_green_700</item>
+        <item name="colorAccent">@color/material_red_a200</item>
+        <item name="android:windowBackground">@color/material_green_50</item>
+    </style>
+
+</resources>

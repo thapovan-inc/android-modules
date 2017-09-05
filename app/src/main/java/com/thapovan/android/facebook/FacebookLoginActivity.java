@@ -38,6 +38,7 @@ public class FacebookLoginActivity extends AppActivity implements FacebookEventS
         final Intent intent = new Intent(activity, FacebookLoginActivity.class);
         activity.startActivity(intent);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mActivity = this;

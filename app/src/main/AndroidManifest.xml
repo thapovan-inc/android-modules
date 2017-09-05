@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.thapovan.android">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,15 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
+            tools:replace="android:value"
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+            android:value="@string/facebook_application_id" />
 
         <provider
             android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider1796885913927913"
+            android:authorities="com.facebook.app.FacebookContentProvider113780272657069"
             android:exported="true" />
-
-        <activity android:name=".facebook.FacebookLoginActivity" />
 
         <activity
             android:name=".home.ActivityHome"
@@ -28,11 +28,13 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".facebook.FacebookLoginActivity" />
+        <activity android:name=".firebase.FirebaseActivity" />
+        <activity android:name=".firebase.SignedInActivity" />
 
         <activity
             android:name="com.facebook.CustomTabActivity"
@@ -43,7 +45,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="@string/fb_login_protocol_scheme" />
+                <data android:scheme="@string/facebook_login_protocol_scheme" />
             </intent-filter>
         </activity>
 

@@ -23,20 +23,22 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
-        android:padding="5dp"
+        android:padding="20dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/btnFirebaseLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Firebase Login"/>
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/btnFacebook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Firebase Login"/>
+            android:text="Native Facebook Login"/>
     </LinearLayout>
 
 

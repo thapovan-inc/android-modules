@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.thapovan.android.app.AppActivity;
 import com.thapovan.android.R;
 import com.thapovan.android.facebook.FacebookLoginActivity;
+import com.thapovan.android.firebase.FirebaseActivity;
 import com.thapovan.android.socialnetwork.facebook.FacebookLogin;
 
 import butterknife.BindView;
@@ -21,8 +22,6 @@ import butterknife.OnClick;
 public class ActivityHome extends AppActivity {
 
     ActivityHome mActivity;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +33,11 @@ public class ActivityHome extends AppActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @OnClick(R.id.btnFirebaseLogin)
     public void onbtnFirebaseLogin() {
-        FacebookLogin.getInstance().onLoginClicked(mActivity);
+        FirebaseActivity.start(mActivity);
     }
 
     @OnClick(R.id.btnFacebook)
