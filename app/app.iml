@@ -144,6 +144,7 @@
     <orderEntry type="library" exported="" name="support-compat-26.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-26.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-26.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-26.0.1" level="project" />

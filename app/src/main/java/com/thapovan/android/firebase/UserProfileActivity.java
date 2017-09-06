@@ -28,6 +28,7 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.gson.Gson;
 import com.thapovan.android.R;
 import com.thapovan.android.commonutils.log.L;
 
@@ -87,6 +88,8 @@ public class UserProfileActivity extends AppCompatActivity {
             finish();
             return;
         }
+        Gson gson = new Gson();
+        L.tag("USER_PROFILE").stackTraceCount(3).showDivider(true).json(gson.toJson(currentUser));
 
         mIdpResponse = getIntent().getParcelableExtra(EXTRA_IDP_RESPONSE);
         mSignedInConfig = getIntent().getParcelableExtra(EXTRA_SIGNED_IN_CONFIG);
